@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-    There once was a <span class="colorword" >{% for color in colors[:-1] %} {{ color }}, {% endfor %} {{colors[-1]}} {{ noun }}</span> sitting in the Hackbright Lab. When <span class="colorword" >{{ person }}</span> went to pick it up, it burst into flames in a totally <span class="colorword" >{{ adjective }}</span> way.
+    There once was a 
+    <span class="colorword" >
+        {% if colors|length > 1 %}
+            {% for color in colors[:-2] %} 
+                {{ color }}, 
+            {% endfor %} 
+            {{ colors[-2] }} and 
+        {% endif %} 
+        {{colors[-1]}} {{ noun }}
+    </span> 
+    sitting in the Hackbright Lab. When 
+    <span class="colorword" >
+        {{ person }}
+    </span> 
+    went to pick it up, it burst into flames in a totally 
+    <span class="colorword" >
+        {{ adjective }}
+    </span> 
+    way.
 {% endblock %}
