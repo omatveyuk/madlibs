@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% block content %}
+    There are many <span class="colorword" >{{ adjective }}</span> ways to choose a <span class="colorword" >{% for color in colors[:-1] %} {{ color }}, {% endfor %} {{colors[-1]}} {{ noun }}</span> to read. First, you could ask for recommendations from <span class="colorword" >{{ person }}</span>.</body>
+{% endblock %}
